@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Screen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="#" class="logo">Codeino</a>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><i class="fas fa-search searchIcon"></i></li>
+        </ul>
+
+        <div class="searchScreen">
+            <div class="closeIcon">
+                <span class="fas fa-times"></span>
+            </div>
+            <div class="searchBox">
+                <input type="text" class="searchText" placeholder="Search">
+                <button class="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </nav>
+    <script type="text/javascript">
+        $(".searchIcon").click(function(){
+            $(".searchScreen").addClass("active");
+            $(".closeIcon").addClass("active");
+            $(".searchIcon").css("opacity",0);
+        });
+        $.fn.toggleScreen = function(){
+            $(".searchScreen").removeClass("active");
+            $(".closeIcon").removeClass("active");
+            $(".searchIcon").css("opacity",1);
+        };
+        $(".closeIcon").click(function(){
+            $.fn.toggleScreen();
+        });
+        $(".searchButton").click(function(){
+            $.fn.toggleScreen();
+        });
+        $(".searchText").on('keypress',function(enter){
+            if(enter.which == 13){
+            $.fn.toggleScreen();
+            }
+        });
+        </script>
+</body>
+</html>

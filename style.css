@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto",sans-serif;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+}
+
+nav{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: absolute;
+  z-index: 999;
+}
+.logo{
+  text-decoration: none;
+  font-size: 40px;
+  font-weight: 700;
+  color: whitesmoke;
+  cursor: pointer;
+  font-family: 'Silkscreen', sans-serif;
+  margin: 0 50px;
+}
+nav ul{
+  margin: 0 50px;
+  display: flex;
+}
+nav ul li{
+  display: block;
+  list-style: none;
+  margin: 10px 30px;
+}
+nav ul li a{
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 20px;
+  font-weight: 700;  
+}
+nav ul li a:hover{
+  text-decoration: 5px whitesmoke solid underline;
+}
+.searchIcon{
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: whitesmoke;
+  opacity: 1;
+}
+
+.searchScreen{
+  display: none;
+}
+.searchScreen.active{
+  position: absolute;
+  background: #000000bb;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: block;
+}
+.closeIcon{
+  position: absolute;
+  right: 100px;
+  top: 26px;
+  opacity: 0;
+  display: none;
+}
+.closeIcon.active{
+  opacity: 1;
+  color: whitesmoke;
+  position: absolute;
+  cursor: pointer;
+  z-index: 999;
+  font-size: 25px;  
+  display: block;
+}
+.searchBox{
+  width: 0;
+  height: 0;
+  position: absolute;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.searchScreen.active .searchBox{
+  opacity: 1;
+  width: 800px;
+  height: 100px;
+  border-bottom: 2px solid #fff;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.searchText{
+  border: none;
+  width: 100%;
+  height: 100%;
+  background: none;
+  outline: none;
+  padding: 0 50px 0 30px;
+  color: #fff;
+  font-size: xx-large;
+}
+.searchText::placeholder{
+  color: #ffffffb3;
+}
+.searchButton{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 30px;
+  opacity: 1;
+}
